@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="pojo">
+	<select id="getGoods"  resultType="Goods"> 
+		select * from goodsinfo 
+			<if test="sellerId!=null">
+				where sellerId=#{sellerId}
+			</if>
+			<if test="status!=null">
+				where status=#{status}
+			</if>
+			<if test="goodsId!=null">
+				where goodsId=#{goodsId}
+			</if>
+	</select>
+	
+	
+	<insert id="addGoods" parameterType="Goods" >
+		insert into goodsinfo(goodsId,status,name,description,pictureId,sellerId)
+			values (#{goodsId},#{status},#{name},#{description},#{pictureId},#{sellerId} )
+	</insert>
+	
+	<update id="setSELLED" parameterType="int">
+		update goodsinfo set status="SELLED" where goodsId=#{goodsId}
+	</update>
+	<update id="updateGoods" parameterType="Goods">
+		update goodsinfo set name=#{name},description=#{description} where goodsId=#{goodsId}
+	</update>
+	
+	<delete id="deleteGoods" parameterType="int">
+		delete from goodsinfo where goodsId=#{goodsId}
+	</delete>
+	
+</mapper>

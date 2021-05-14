@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+    <mapper namespace="pojo">
+        <select id="listAccount" resultType="Account">
+            select * from accountinfo;
+        </select>
+        <select id="getAccount" parameterType="String" resultType="Account">
+        	select * from accountinfo where id=#{id};
+        </select>
+        
+        <insert id="addAccount" parameterType="Account">
+        	insert into accountinfo(id,password,contactInfo) values(#{id},#{password},#{contactInfo});
+        </insert>
+        
+        <update id="updateAccountPw" parameterType="Account">
+        	update accountinfo set password=#{password} where id=#{id};
+        </update>
+        <update id="updateAccount" parameterType="Map">
+        	update accountinfo set id=#{newId},password=#{password},contactInfo=#{contactInfo} where id=#{formerId};
+        </update>
+        
+        <delete id="deleteAccount" parameterType="String">
+        	delete from accountinfo where id=#{id};
+        </delete>
+        
+    </mapper>
