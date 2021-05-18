@@ -22,6 +22,7 @@ if (x==null || x==""){
 	用户ID:<input type="text" name="id" ><br />
 	登录密码:<input type="password" name="password"><br />
 	<input type="submit" value="登录">
+	<p id="failMessage" style='color:red'>${failMessage }</p>
 </form>
 <a href="./register">注册</a>
 

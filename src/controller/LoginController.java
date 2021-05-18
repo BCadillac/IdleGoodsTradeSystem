@@ -31,8 +31,8 @@ public class LoginController{
 				
 		//check id existing
 		if(!aidDAO.isIdExisting(inputAccount.getId())){
-			mav.setViewName("fail");
-			mav.addObject("message","fail because the id is not existing");
+			mav.setViewName("login");
+			mav.addObject("failMessage","fail because the id is not existing");
 		}else{
 			//根据id查找数据库得到密码
 			Account docAccount=aidDAO.getAccount(inputAccount.getId());
@@ -44,8 +44,8 @@ public class LoginController{
 				httpSession.setAttribute("currentAccount", docAccount);
 				mav.setViewName("redirect:/home");
 			}else{
-				mav.setViewName("fail");
-				mav.addObject("message","fail because wrong password ");
+				mav.setViewName("login");
+				mav.addObject("failMessage","fail because wrong password ");
 			}
 		}
 		return mav;
