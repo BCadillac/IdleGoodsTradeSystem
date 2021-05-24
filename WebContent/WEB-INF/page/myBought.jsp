@@ -21,7 +21,7 @@
 	AccountInfoDocDAO aidDAO=new AccountInfoDocDAO();
 	for(Transaction s:listOfTransactions){
 %>
-		<img src="image/<%=gidDao.getGoods(s.getGoodsId()).getPictureId() %>" width="160" height="90" />
+		<img src="GoodsImg/<%=gidDao.getGoods(s.getGoodsId()).getPictureId() %>" width="160" height="90" />
 		<%=s.getSellerId() %>
 		<%=aidDAO.getAccount(s.getSellerId()).getContactInfo() %>
 		<br />
