@@ -108,7 +108,7 @@ public class GoodsInfoDocDAO {
 			File goodsImageFile = new File(request.getServletContext().getRealPath("/GoodsImg"), pictureId);
 			if(goodsImageFile.exists()){
 				goodsImageFile.delete();
-			}
+			}  
 //			}else{
 //				return false;	//Í¼Æ¬²»´æÔÚ
 //			}
