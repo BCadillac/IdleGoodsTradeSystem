@@ -21,7 +21,7 @@ public class deleteController {
 //		Account currentAccount=(Account)httpSession.getAttribute("currentAccount");
 //		String sellerOfGoods =gidDAO.getGoods(goodsId).getSellerId();
 //		if(sellerOfGoods.equals(currentAccount.getId())){	//检验商品是否属于当前用户，维护数据一致
-//		}
+//		}  
 		
 		GoodsInfoDocDAO gidDAO=new GoodsInfoDocDAO();
 		if(gidDAO.deleteGoods(request,goodsId)){
