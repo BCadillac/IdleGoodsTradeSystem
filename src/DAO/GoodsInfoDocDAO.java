@@ -105,10 +105,13 @@ public class GoodsInfoDocDAO {
 			//É¾³ý¼ÇÂ¼
 			sqlSession.delete("deleteGoods",goodsId);
 			//É¾³ýÍ¼Æ¬
-			File goodsImageFile = new File(request.getServletContext().getRealPath("/image"), pictureId);
+			File goodsImageFile = new File(request.getServletContext().getRealPath("/GoodsImg"), pictureId);
 			if(goodsImageFile.exists()){
 				goodsImageFile.delete();
 			}
+//			}else{
+//				return false;	//Í¼Æ¬²»´æÔÚ
+//			}
 			sqlSession.commit();
 			return true;
 		}catch(Exception e){
