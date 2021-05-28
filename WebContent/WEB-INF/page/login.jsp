@@ -6,13 +6,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>登录</title>
 <script>
-function validateForm(){
-var x=document.forms["loginForm"]["id"].value;
-if (x==null || x==""){
-  alert("用户必须填写");
-  return false;
-  }
-}
+	function validateForm(){
+	var x=document.forms["loginForm"]["id"].value;
+	if (x==null || x==""){
+	  alert("用户必须填写");
+	  return false;
+	  }
+	}
 </script>
 </head>
 <body>
