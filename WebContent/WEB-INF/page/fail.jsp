@@ -9,6 +9,7 @@
 <body>
 
 <div style='color:red'>${message}</div>
+<a href="./home">回到首页</a>
 
 </body>
 </html>
