@@ -14,17 +14,10 @@ import pojo.Account;
  
 @Controller
 public class LoginController{
-	@RequestMapping(value="/",method=RequestMethod.GET)
-	//除了在controller里标注的页面，都会重定向访问登录页面。
-	public ModelAndView defaultEnterSystem()throws Exception{
-		return new ModelAndView("redirect:/login");
-	}
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public ModelAndView enterLogin()throws Exception{
 		return new ModelAndView("login");
 	}
-	
-	
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	public ModelAndView handleLogin(Account inputAccount,HttpSession httpSession,ModelAndView mav) throws IOException{
 		AccountInfoDocDAO aidDAO=new AccountInfoDocDAO();	
