@@ -12,6 +12,7 @@
 	<!-- 注解方式 -->
 	<context:component-scan base-package="controller" />
 	
+	<!-- 处理json中文 -->
 	<mvc:annotation-driven >
        <mvc:message-converters register-defaults="true">
           <bean class="org.springframework.http.converter.StringHttpMessageConverter">
