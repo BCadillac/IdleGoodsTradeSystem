@@ -25,13 +25,13 @@ public class AuthFilter implements Filter {
 		HttpServletResponse response = (HttpServletResponse) res;
 
 		String uri = request.getRequestURI();
-		// System.out.println(uri);
 		if (uri.equals("/IdleGoodsTradeSystem/")) {
-			response.sendRedirect("home");
+			response.sendRedirect("login");
 			return;
 		}
 		if (uri.endsWith("login.jsp") || uri.endsWith("login") || uri.endsWith("register")
-				|| uri.endsWith("register.jsp") || uri.endsWith("home") || uri.endsWith("home.jsp")
+				|| uri.endsWith("register.jsp") 
+				//|| uri.endsWith("home") || uri.endsWith("home.jsp")
 				|| uri.endsWith("test")) {
 			chain.doFilter(request, response);
 			return;
