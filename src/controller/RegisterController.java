@@ -23,16 +23,16 @@ public class RegisterController {
 		ModelAndView mav=new ModelAndView();
 		
 		if(aidDAO.isIdExisting(account.getId())){
-			mav.setViewName("fail");//如果想重定向，需要再写一个failController
-			mav.addObject("message","fail because the id existing!");
+			mav.setViewName("register");//如果想重定向，需要再写一个failController
+			mav.addObject("failMessage","抱歉，该用户ID已存在");
 		}else{
 			//write account into sql
 			if(aidDAO.addAccount(account)){
-				mav.setViewName("success");
-				mav.addObject("message","success!");
+				mav.setViewName("register");
+				mav.addObject("successMessage","注册成功！");
 			}else{
-				mav.setViewName("fail");
-				mav.addObject("message","fail because insert error!");
+				mav.setViewName("register");
+				mav.addObject("failMessage","注册失败！");
 			}
 		}
 		return mav;
