@@ -1,0 +1,28 @@
+nav.top {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #e7e7e7;
+	
+	background-color:#366F9C;
+}
+
+nav.top span, nav.top a {
+    color: #FFFFFF;
+    margin: 0px 10px 0px 10px;
+}
+
+/* nav.top a:hover{ */
+/* 	color:#FFFFFF; */
+/* } */
+
+.topRight{
+	float:right;
+}
+
+
+a{
+	text-decoration:none;
+}
+
