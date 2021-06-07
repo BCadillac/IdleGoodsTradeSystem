@@ -8,8 +8,9 @@
 <link rel="stylesheet" href="css/top.css">
 </head>
 <body>
+	
 	<div>
-		<img alt="logo" src="image/logo.jpg">
+		<a href="./home"><img alt="logo" src="SystemImage/logo.jpg"></a>
 	</div>
 	<nav class="top">
 		<div class="top_middle">
