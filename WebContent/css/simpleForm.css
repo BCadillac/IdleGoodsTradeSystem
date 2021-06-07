@@ -1,0 +1,19 @@
+body{
+    text-align: center;
+}
+#logo{
+    margin-left: 25px;
+}
+.loginInputDiv {
+    margin: 20px 0px;
+}
+a{
+    text-decoration:none;
+    color:#A4A4A4;
+}
+a:hover{
+    color: #366F9C;
+}
+input::input-placeholder {
+    text-align: center 
+}
