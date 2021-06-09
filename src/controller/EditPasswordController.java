@@ -24,18 +24,18 @@ public class EditPasswordController {
 	public ModelAndView editPassword(HttpSession httpSession,ModelAndView mav,String originalPw,String newPw) throws IOException{
 		Account currentAccount=(Account)httpSession.getAttribute("currentAccount");
 		if(!originalPw.equals(currentAccount.getPassword())){
-			mav.setViewName("fail");
-			mav.addObject("message","fail because wrong original password ");
+			mav.setViewName("editPassword");
+			mav.addObject("failMessage","原密码错误！");
 		}else{
 			currentAccount.setPassword(newPw);
 			AccountInfoDocDAO aidDAO=new AccountInfoDocDAO();
 			if(!aidDAO.updateAccountPw(currentAccount)){
-				mav.setViewName("fail");//如果想重定向，需要再写一个failController
-				mav.addObject("message","fail because the id existing!");
+				mav.setViewName("editPassword");//如果想重定向，需要再写一个failController
+				mav.addObject("failMessage","fail because the id existing!");
 			}else{
-				mav.setViewName("success");
-				mav.addObject("message","success, please login in again");
-				httpSession.setAttribute("currentAccount", null);
+				mav.setViewName("editPassword");
+				mav.addObject("successMessage","修改成功！请重新登录");
+				httpSession.setAttribute("currentAccount", null);//由于有登录过滤，因此无论点击哪个链接都需要重新登录
 			}
 			return mav;
 		}

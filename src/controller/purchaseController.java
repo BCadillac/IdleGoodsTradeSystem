@@ -38,13 +38,13 @@ public class purchaseController {
 		TransactionDocDAO tdDao=new TransactionDocDAO();
 		if(tdDao.addTransaction(newTransaction)){
 			gidDAO.setSELLED(goodsId);
-			mav.setViewName("success");
 			AccountInfoDocDAO aidDAO=new AccountInfoDocDAO();
 			Account seller=aidDAO.getAccount(goods.getSellerId());
-			mav.addObject("message","purchase success!<br />Seller's Contact:"+seller.getContactInfo());
+			mav.setViewName("purchase");
+			mav.addObject("successMessage","购买成功!<br />出售者联系方式:"+seller.getContactInfo());
 		}else{
-			mav.setViewName("fail");
-			mav.addObject("message","fail because purchase fail");
+			mav.setViewName("purchase");
+			mav.addObject("failMessage","抱歉，购买失败！");
 		}
 		
 		return mav;

@@ -29,8 +29,8 @@ public class EditPersonalInfoController {
 	public  ModelAndView handleEdit(Account inputAccount,ModelAndView mav,HttpSession httpSession) throws IOException{
 		AccountInfoDocDAO aidDAO=new AccountInfoDocDAO();
 		if(aidDAO.isIdExisting(inputAccount.getId())){
-			mav.setViewName("fail");
-			mav.addObject("message","fail because the id is existing!");
+			mav.setViewName("editPersonalInfo");
+			mav.addObject("failMessage","该ID已存在！");
 		}else{
 			Account currentAccount =(Account)httpSession.getAttribute("currentAccount");
 			Map<String, String> updateInfo=new HashMap<String, String>();
@@ -39,11 +39,11 @@ public class EditPersonalInfoController {
 			updateInfo.put("contactInfo", inputAccount.getContactInfo());
 			updateInfo.put("password", currentAccount.getPassword());
 			if(aidDAO.updateAccount(updateInfo)){
-				mav.setViewName("success");
-				mav.addObject("message","success!please re login");
+				mav.setViewName("editPersonalInfo");
+				mav.addObject("successMessage","成功！请重新登录！");
 			}else{
-				mav.setViewName("fail");
-				mav.addObject("message","fail because update error!");
+				mav.setViewName("editPersonalInfo");
+				mav.addObject("failMessage","修改失败！请联系系统管理员");
 			}
 		}		
 		return mav;

@@ -34,11 +34,11 @@ public class ReleaseGoodsController {
 		goods.setPictureId(pictureId);
 		goods.setSellerId(currentAccount.getId());
 		if (gidDAO.addGoods(goods)) {
-			mav.setViewName("success");
-			mav.addObject("message", "success!");
+			mav.setViewName("releaseGoods");
+			mav.addObject("successMessage", "ä¸Šä¼ æˆåŠŸï¼");
 		} else {
-			mav.setViewName("fail");
-			mav.addObject("message", "fail because insert error!");
+			mav.setViewName("releaseGoods");
+			mav.addObject("failMessage", "ä¸Šä¼ å¤±è´¥ï¼è¯·è”ç³»ç³»ç»Ÿç®¡ç†å‘˜");
 		}
 		return mav;
 	}
@@ -46,11 +46,11 @@ public class ReleaseGoodsController {
 	public String saveImage(HttpServletRequest request, UploadedImage image, String sellerId)
 			throws IllegalStateException, IOException {
 		// this function will save image and return its id
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");// ÉèÖÃÈÕÆÚ¸ñÊ½
-		String pictureId = df.format(new Date()) + "@" + sellerId + ".jpg";// new Date()Îª»ñÈ¡µ±Ç°ÏµÍ³Ê±¼ä
-		File newFile = new File(request.getServletContext().getRealPath("/GoodsImg"), pictureId);// µÚÒ»¸ö²ÎÊıÖ¸¶¨Ä¿Â¼£¬ÕâÒ»²½ÓÃÓÚ´´½¨Â·¾¶
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");// è®¾ç½®æ—¥æœŸæ ¼å¼
+		String pictureId = df.format(new Date()) + "@" + sellerId + ".jpg";// new Date()ä¸ºè·å–å½“å‰ç³»ç»Ÿæ—¶é—´
+		File newFile = new File(request.getServletContext().getRealPath("/GoodsImg"), pictureId);// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šç›®å½•ï¼Œè¿™ä¸€æ­¥ç”¨äºåˆ›å»ºè·¯å¾„
 		newFile.getParentFile().mkdirs();
-		image.getImage().transferTo(newFile);// ½«Í¼Æ¬¸´ÖÆµ½newFileÖ¸¶¨µÄÂ·¾¶
+		image.getImage().transferTo(newFile);// å°†å›¾ç‰‡å¤åˆ¶åˆ°newFileæŒ‡å®šçš„è·¯å¾„
 		return pictureId;
 	}
 }
