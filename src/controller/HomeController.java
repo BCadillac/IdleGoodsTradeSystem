@@ -20,10 +20,7 @@ public class HomeController {
 	@RequestMapping(value="/home",method=RequestMethod.GET)
 	public ModelAndView enterHome() throws IOException{
 		ModelAndView mav=new ModelAndView();
-		GoodsInfoDocDAO gidDAO=new GoodsInfoDocDAO();
-		List<Goods> listOfSellingGoods = gidDAO.getAllSellingGoods();
 		mav.setViewName("home");
-		mav.addObject("listOfSellingGoods",listOfSellingGoods);
 		return mav;
 	}
 	
