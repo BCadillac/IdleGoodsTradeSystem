@@ -18,7 +18,7 @@
 	<div id="templateDivHTML" style="display:none">
 		<div class="goods" v-on:click="goToGoodsInfo">
 			<div class="imgDiv">
-				<img v-bind:src="product.pictureId" alt="img" width="160" height="90"> <!--"GoodsImg/"+-->
+				<img v-bind:src="product.pictureId" alt="img" width="160" height="90"> 
 			</div>
 			<div class="goodsNameIntro">
 				商品名称
@@ -29,11 +29,8 @@
 		</div>
 	</div>	
 	
-
-	<div id="div1">
-		<div id="sellingGoodsListDiv">
-			<goods v-for="item in listOfSellingGoods" v-bind:product="item"></goods>
-		</div>
+	<div id="sellingGoodsListDiv">
+		<goods v-for="item in listOfSellingGoods" v-bind:product="item"></goods>
 	</div>
 	
 	<script>
@@ -50,7 +47,7 @@
 
 		var url="./home";
 		new Vue({
-			el: '#div1',
+			el: '#sellingGoodsListDiv',
 			data:{
 				listOfSellingGoods:[]
 			},
