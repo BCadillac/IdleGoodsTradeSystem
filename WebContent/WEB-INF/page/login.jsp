@@ -21,7 +21,7 @@
 	<br>
 	<br>
 	<br>
-	<img id="logo" alt="logo" src="SystemImage/logo.jpg" >
+	<a href="./home"><img id="logo" alt="logo" src="SystemImage/logo.jpg" ></a>
 
 	<h1>账户登录</h1>
 
