@@ -36,9 +36,8 @@
 
 <body>
 	<br>
-	<br>
-	<br>
-	<img id="logo" alt="logo" src="SystemImage/logo.jpg" >
+	
+	<a href="./home"><img id="logo" alt="logo" src="SystemImage/logo.jpg" ></a>
 
 	<h1>用户注册</h1>
 
