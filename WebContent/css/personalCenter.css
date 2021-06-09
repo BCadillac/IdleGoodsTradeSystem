@@ -1,0 +1,40 @@
+a{
+    text-decoration:none;
+    color:#A4A4A4;
+}
+a:hover{
+    color:#fff;
+    background-color: #366F9C;
+}
+h1{
+    text-align: center;
+    width:180px
+}
+td{
+    vertical-align: top;
+}
+.introInfo{
+    font-weight:bold;
+    color:#366F9C;
+}
+.leftModule {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+.selectedLeftModule{
+    color:#366F9C;
+    font-weight:bold;
+}
+
+.rightModule{
+    width: 900px;
+}
+
+.rightModule p{
+    margin-top: 0;
+}

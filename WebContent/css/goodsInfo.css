@@ -1,0 +1,27 @@
+.contentDiv{
+    margin-left: 100px;
+}
+.imgDiv{
+    width: 640px;
+    height: 360px;
+}
+.rightTd{
+    vertical-align: top;
+}
+
+.leftTd{
+    padding-right: 50px;
+}
+.introInfo{
+    font-weight:bold;
+    color:#366F9C;
+}
+.purchaseButton{
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    background-color: #366F9C;
+    text-align: center;
+    color: white;
+    width: 120px;
+}
