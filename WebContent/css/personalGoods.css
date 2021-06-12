@@ -1,0 +1,89 @@
+.goodsImg {
+    width: 160px;
+    height: 90px;
+}
+#rightModule{
+    padding-left: 20px;
+}
+.rightModuleTable{
+    width: 100%;
+    /* padding-left:  20px; */
+    border-collapse: collapse;
+}
+
+.imgTd{
+    width: 13%;
+    text-align: center;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    padding-top: 5px;
+}
+.nameTd{
+    width: 10%;
+    text-align: center;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+.descriptionTd{
+    width: 65%;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    /* text-align: center; */
+    padding: 0px 20px;
+}
+.optionTd{
+    width: 10%;
+    text-align: center;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+.editLink{
+    padding: 0px 5px;
+}
+.deleteLink{
+    padding: 0px 5px;
+}
+.rightModuleTable thead{
+    background-color: #ddd;
+}
+.rightModuleTable tr{
+    border: 1px solid #ddd;
+}
+.SELLED{
+    pointer-events: none;
+    padding:2px 5px;
+}
+.SELLING{
+    padding:2px 5px;
+    color: #366F9C;
+}
+.SELLED:hover{
+    color:#A4A4A4;
+    background-color:white;
+}
+.sellerIdTd{
+    width: 10%;
+    text-align: center;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+.sellerContactTd{
+    /* width: 65%; */
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0px 20px;
+}
+.buyerIdTd{
+    width: 10%;
+    text-align: center;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+.buyerContactTd{
+    /* width: 65%; */
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0px 20px;
+}
