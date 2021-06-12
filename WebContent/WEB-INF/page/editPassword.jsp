@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>修改密码</title>
-    <link rel="stylesheet" href="css/personalCenter.css">
+    <link rel="stylesheet" href="css/personalInfo.css">
     <script>
         function validateForm() {
 			var pw1 = document.forms["editPwForm"]["newPw"].value;
@@ -24,7 +24,7 @@
     <table width="100%" class="showTable">
         <tbody>
             <tr width="145px" style="padding-left:20px;">
-                <td>
+                <td id="leftModuleTd">
                     <nav>
                         <div style="width:180px;">
                             <span class="leftModule selectedLeftModule">个人信息</span>
@@ -34,7 +34,7 @@
                         </div>
                     </nav>
                 </td>
-                <td>
+                <td id="rightModuleTd">
                     <div class="rightModule" >
                         <form name="editPwForm" action="editPassword" method="post" onsubmit="return validateForm()" >
                             <p><span class="introInfo" >请输入原密码:</span><input type="password" name="originalPw"></p>

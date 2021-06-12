@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>个人中心</title>
-    <link rel="stylesheet" href="css/personalCenter.css">
+    <link rel="stylesheet" href="css/personalInfo.css">
 
 </head>
 
@@ -15,7 +15,7 @@
     <table width="100%" class="showTable">
         <tbody>
             <tr width="145px" style="padding-left:20px;">
-                <td>
+                <td id="leftModuleTd">
                     <nav>
                         <div style="width:180px;">
                             <span class="leftModule selectedLeftModule">个人信息</span>
@@ -25,7 +25,7 @@
                         </div>
                     </nav>
                 </td>
-                <td>
+                <td id="rightModuleTd">
                     <div class="rightModule" >
                         <p><span class="introInfo" >用户ID: </span>${id}</p>
                         <p><span class="introInfo" >用户联系方式: </span>${contactInfo}</p>
