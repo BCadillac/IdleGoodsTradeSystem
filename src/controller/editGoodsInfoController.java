@@ -23,6 +23,8 @@ public class editGoodsInfoController {
 		mav.addObject("goodsId",goodsId);
 		mav.addObject("name",goodsGoingToEdit.getName());
 		mav.addObject("description",goodsGoingToEdit.getDescription());
+		mav.addObject("goodsImg","GoodsImg/"+goodsGoingToEdit.getPictureId());
+		//System.out.println("enter controller get");
 		return mav;
 	}
 	
@@ -30,11 +32,15 @@ public class editGoodsInfoController {
 	public ModelAndView handlePost(ModelAndView mav,Goods inputGoods) throws IOException{
 		GoodsInfoDocDAO gidDAO=new GoodsInfoDocDAO();
 		if(gidDAO.updateGoods(inputGoods)){
-			mav.setViewName("success");
-			mav.addObject("message","edit success");
+			inputGoods=gidDAO.getGoods(inputGoods.getGoodsId());
+			mav.setViewName("editGoodsInfo");
+			mav.addObject("name",inputGoods.getName());
+			mav.addObject("description",inputGoods.getDescription());
+			mav.addObject("goodsImg","GoodsImg/"+inputGoods.getPictureId());
+			mav.addObject("successMessage","修改成功！");
 		}else{
-			mav.setViewName("fail");
-			mav.addObject("message","fail because update error!");
+			mav.setViewName("editGoodsInfo");
+			mav.addObject("failMessage","修改失败！");
 		}		
 		return mav;
 	}
