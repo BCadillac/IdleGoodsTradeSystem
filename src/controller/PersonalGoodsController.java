@@ -21,11 +21,7 @@ import pojo.Goods;
 public class PersonalGoodsController {
 	@RequestMapping(value="/personalGoods",method=RequestMethod.GET)
 	public ModelAndView defaultEnter(ModelAndView mav,HttpSession httpSession) throws IOException{
-		Account currentAccount=(Account)httpSession.getAttribute("currentAccount");
-		GoodsInfoDocDAO gidDAO=new GoodsInfoDocDAO();
-		List<Goods> listOfPersonalGoods = gidDAO.getPersonalGoods(currentAccount.getId());
 		mav.setViewName("personalGoods");
-		mav.addObject("listOfPersonalGoods",listOfPersonalGoods);
 		return mav;
 	}
 	
@@ -37,7 +33,7 @@ public class PersonalGoodsController {
 		List<Goods> listOfPersonalGoods = gidDAO.getPersonalGoods(currentAccount.getId());
 		JSONObject jsonObject=new JSONObject();
 		jsonObject.put("listOfPersonalGoods", JSONObject.toJSON(listOfPersonalGoods));
-		System.out.println(jsonObject.toJSONString());
+ 		//System.out.println(jsonObject.toJSONString());
 		return jsonObject.toJSONString();
 	}
 	
