@@ -25,17 +25,18 @@ public class AuthFilter implements Filter {
 		HttpServletResponse response = (HttpServletResponse) res;
 
 		String uri = request.getRequestURI();
-		if (uri.equals("/IdleGoodsTradeSystem/")) {
-			response.sendRedirect("login");
-			return;
-		}
 		if (uri.endsWith("login.jsp") || uri.endsWith("login") || uri.endsWith("register")
 				|| uri.endsWith("register.jsp") 
-				//|| uri.endsWith("home") || uri.endsWith("home.jsp")
+				|| uri.endsWith("home") || uri.endsWith("home.jsp")
 				|| uri.endsWith("test")) {
 			chain.doFilter(request, response);
 			return;
 		}
+		if (uri.equals("/IdleGoodsTradeSystem/")) {
+			response.sendRedirect("login");
+			return;
+		}
+		
 		if (null == request.getSession().getAttribute("currentAccount")) {
 			response.sendRedirect("login");
 			return;
