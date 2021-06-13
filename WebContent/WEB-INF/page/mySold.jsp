@@ -73,8 +73,8 @@
 						<thead>
 							<tr>
 								<th>商品图片</td>
-								<th>出售者</td>
-								<th>出售者联系方式</th>
+								<th>购买者</td>
+								<th>购买者联系方式</th>
 							</tr>
 						</thead>
 						<tbody id="tableBody">
