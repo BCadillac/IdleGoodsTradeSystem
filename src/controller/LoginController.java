@@ -24,7 +24,7 @@ public class LoginController{
 		//检查用户ID是否存在
 		if(!aidDAO.isIdExisting(inputAccount.getId())){
 			mav.setViewName("login");
-			mav.addObject("failMessage","用户ID不存在");
+			mav.addObject("failMessage","用户或密码错误");
 		}else{
 			//根据id查找数据库得到密码
 			Account docAccount=aidDAO.getAccount(inputAccount.getId());
@@ -34,7 +34,7 @@ public class LoginController{
 				mav.setViewName("redirect:/home");
 			}else{
 				mav.setViewName("login");
-				mav.addObject("failMessage","密码错误");
+				mav.addObject("failMessage","用户或密码错误");
 			}
 		}
 		return mav;
