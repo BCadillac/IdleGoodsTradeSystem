@@ -39,6 +39,7 @@ public class EditPersonalInfoController {
 			updateInfo.put("contactInfo", inputAccount.getContactInfo());
 			updateInfo.put("password", currentAccount.getPassword());
 			if(aidDAO.updateAccount(updateInfo)){
+				httpSession.setAttribute("currentAccount", null);
 				mav.setViewName("editPersonalInfo");
 				mav.addObject("successMessage","成功！请重新登录！");
 			}else{
