@@ -33,7 +33,7 @@ public class AuthFilter implements Filter {
 			return;
 		}
 		if (uri.equals("/IdleGoodsTradeSystem/")) {
-			response.sendRedirect("login");
+			response.sendRedirect("home");
 			return;
 		}
 		
