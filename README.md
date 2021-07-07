@@ -1,5 +1,5 @@
 # IdleGoodsTradeSystem
-Bulid a idle goods trade system by using SSM.
+Bulid an idle goods trade system by using SSM.
 
 ## 第一次提交
 这是一个我初学Javaweb时写的闲置物品交易系统，采用SSM方式构建。
